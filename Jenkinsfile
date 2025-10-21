@@ -1,16 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Preparar') {
             steps {
-                echo 'Compilando el proyecto...'
-                bat './gradlew build'
+                echo '✅ Jenkins recibió el webhook correctamente'
             }
         }
-        stage('Run') {
+        stage('Build falso') {
             steps {
-                echo 'Iniciando el servidor Spring Boot...'
-                bat './gradlew bootRun'
+                echo '🏗️ Simulando compilación del proyecto...'
+            }
+        }
+        stage('Deploy falso') {
+            steps {
+                echo '🚀 Simulando despliegue exitoso!'
             }
         }
     }
